@@ -1,0 +1,27 @@
+app: gold-price-bot-serverless
+console: true
+service: gold-price-bot-serverless
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  updatePrice:
+    handler: handlers/price.get
+    events:
+      - httpApi:
+          path: /price
+          method: get
+      - schedule: rate(1 minute)
+  tgWebhook:
+    handler: handlers/telegram.receivedMessageWebhook
+    events:
+      - httpApi:
+          path: /telegram/webhooks/receivedMessage
+          method: post
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin

@@ -1,0 +1,18 @@
+{
+  "name": "gold-price-bot-serverless",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@mathieuc/tradingview": "github:Mathieu2301/TradingView-API",
+    "axios": "^0.26.0",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.34",
+    "mongoose": "^6.2.4",
+    "node-telegram-bot-api": "^0.56.0",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^3.12.2",
+    "serverless-offline": "^8.5.0"
+  }
+}
